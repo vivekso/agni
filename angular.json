@@ -96,6 +96,42 @@
           }
         }
       }
+    },
+    "agni-form-builder": {
+      "projectType": "library",
+      "root": "projects/agni-form-builder",
+      "sourceRoot": "projects/agni-form-builder/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/agni-form-builder/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/agni-form-builder/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/agni-form-builder/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/agni-form-builder/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
